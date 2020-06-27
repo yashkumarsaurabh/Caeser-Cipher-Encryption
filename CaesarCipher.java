@@ -1,6 +1,6 @@
 import java.io.*;
-public class Decipher {
-	static String encrypt(String input, int key){
+public class CaesarCipher {
+	public String encrypt(String input, int key){
 		//Make a stringBuilder with message 
 		StringBuilder encrypted = new StringBuilder(input);
 		//write down alphabet
@@ -39,7 +39,8 @@ public class Decipher {
         while ((line = br1.readLine()) != null) {
             message.append(line).append("\n");
         }
-        String encrypted  = encrypt(message.toString(),key);
+        CaesarCipher c = new CaesarCipher();
+        String encrypted  = c.encrypt(message.toString(),key);
         System.out.println(encrypted);
         br1.close();
 	}
